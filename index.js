@@ -2,7 +2,7 @@
 //replace hhtp with express;
 const express = require('express')
 const Note = require('./models/Note')
-console.log(Note);
+console.log(Note);//testing getone val
 //create the server and call it app
 const app = express()
 //variable for the port num
@@ -10,9 +10,9 @@ const port = 3001
 
 app.get('/notes/:noteID',(req,res)=>{
     // console.log('you asked for a specific note')
-    // console.log(req.params.noteID)
+    //console.log(req.body)
     // res.send('The id: ' + req.params.noteID)
-    const theID = parseInt(req.params.noteID, 10)
+    const theID = parseInt(req.params.noteID, 10)//base 10 make sure you get reg. numbers not binary etc.
     console.log(theID)
     const aNote  = Note.getOne(theID);
     // console.log(aNote)

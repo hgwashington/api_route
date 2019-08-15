@@ -1,6 +1,6 @@
 db = require('../export_datbase');
 
-getOne = (id) => {
+module.exports.getOne = (id) => {
     // console.log('Hello World');
     return db.one(`select * from notes where id=$1`,[id])
     .catch(err=>{
@@ -9,4 +9,4 @@ getOne = (id) => {
     })
 }
 
-module.exports = { getOne };
+// module.exports = { getOne };   ///did not work withou{} 
